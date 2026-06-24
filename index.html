@@ -1,50 +1,124 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SpicyVelma</title>
+  <title>Spicy Velma</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background: #111;
+      margin: 0;
+      min-height: 100vh;
       color: white;
-      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 40px 20px;
+      font-family: Georgia, serif;
+      background:
+        radial-gradient(circle at center, rgba(255, 0, 0, .35), transparent 35%),
+        linear-gradient(180deg, #2b0000, #050000);
+    }
+
+    .container {
+      max-width: 650px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    .profile {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ff3030;
+      box-shadow: 0 0 25px #ff0000, 0 0 70px #ff0000;
     }
 
     h1 {
-      margin-bottom: 10px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 90px;
+      margin: 25px 0 10px;
+      text-shadow: 0 0 15px #ff0000, 0 0 35px #ff0000;
     }
 
-    p {
-      color: #ccc;
+    .bio {
+      letter-spacing: 6px;
+      color: #ff7777;
+      margin-bottom: 25px;
+    }
+
+    .flame {
+      font-size: 24px;
+      margin-bottom: 25px;
     }
 
     .button {
-      display: block;
-      max-width: 300px;
-      margin: 15px auto;
-      padding: 15px;
-      background: #ff4da6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 600px;
+      margin: 16px auto;
+      padding: 20px 28px;
+      border-radius: 999px;
+      border: 2px solid #ff3030;
+      background: rgba(0,0,0,.65);
       color: white;
       text-decoration: none;
-      border-radius: 12px;
-      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 4px;
+      box-shadow: 0 0 18px rgba(255,0,0,.6);
     }
 
     .button:hover {
-      opacity: 0.9;
+      transform: scale(1.03);
+    }
+
+    .icon {
+      color: #ff5b5b;
+      font-size: 24px;
+    }
+
+    .footer {
+      margin-top: 35px;
+      color: #ff7777;
+      letter-spacing: 4px;
+      font-size: 12px;
     }
   </style>
 </head>
+
 <body>
+  <div class="container">
 
-<h1>SpicyVelma </h1>
-<p>Find all my links below</p>
+    <img class="profile" src="image.png" alt="Spicy Velma">
 
-<a class="button" href="https://instagram.com/YOURUSERNAME">Instagram</a>
-<a class="button" href="https://x.com/YOURUSERNAME">X / Twitter</a>
-<a class="button" href="https://YOUR-LINK-HERE.com">VIP Content</a>
+    <h1>Spicy Velma ♡</h1>
 
+    <div class="bio">GAMER • CREATOR • COSPLAYER</div>
+
+    <div class="flame">─ 🔥 ─</div>
+
+    <a class="button" href="https://instagram.com/YOURUSERNAME">
+      <span class="icon">◎</span> INSTAGRAM <span>›</span>
+    </a>
+
+    <a class="button" href="https://snapchat.com/add/YOURUSERNAME">
+      <span class="icon">👻</span> SNAPCHAT <span>›</span>
+    </a>
+
+    <a class="button" href="https://x.com/YOURUSERNAME">
+      <span class="icon">𝕏</span> X / TWITTER <span>›</span>
+    </a>
+
+    <a class="button" href="https://tiktok.com/@YOURUSERNAME">
+      <span class="icon">♪</span> TIKTOK <span>›</span>
+    </a>
+
+    <a class="button" href="YOUR-EXCLUSIVE-LINK">
+      <span class="icon">♡</span> EXCLUSIVE CONTENT ✨ <span>›</span>
+    </a>
+
+    <div class="footer">© 2026 SPICY VELMA</div>
+
+  </div>
 </body>
 </html>
