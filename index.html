@@ -1,124 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Spicy Velma</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spicy Velma</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: white;
-      text-align: center;
-      font-family: Georgia, serif;
-      background:
-        radial-gradient(circle at center, rgba(255, 0, 0, .35), transparent 35%),
-        linear-gradient(180deg, #2b0000, #050000);
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    .container {
-      max-width: 650px;
-      margin: auto;
-      padding: 45px 20px;
-    }
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+        linear-gradient(rgba(15,0,0,.70),rgba(15,0,0,.70)),
+        url("background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:white;
+}
 
-    .profile {
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #ff3030;
-      box-shadow: 0 0 25px #ff0000, 0 0 70px #ff0000;
-    }
+.container{
+    width:90%;
+    max-width:420px;
+    text-align:center;
+    padding:35px 25px;
+    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,.35);
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.08);
+}
 
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 90px;
-      margin: 25px 0 10px;
-      text-shadow: 0 0 15px #ff0000, 0 0 35px #ff0000;
-    }
+.profile{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #ff2d2d;
+    box-shadow:0 0 25px rgba(255,0,0,.45);
+    margin-bottom:18px;
+}
 
-    .bio {
-      letter-spacing: 6px;
-      color: #ff7777;
-      margin-bottom: 25px;
-    }
+h1{
+    font-size:2rem;
+    font-weight:700;
+}
 
-    .flame {
-      font-size: 24px;
-      margin-bottom: 25px;
-    }
+.username{
+    color:#ff6b6b;
+    margin-top:6px;
+    margin-bottom:25px;
+    font-size:.95rem;
+}
 
-    .button {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 600px;
-      margin: 16px auto;
-      padding: 20px 28px;
-      border-radius: 999px;
-      border: 2px solid #ff3030;
-      background: rgba(0,0,0,.65);
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      letter-spacing: 4px;
-      box-shadow: 0 0 18px rgba(255,0,0,.6);
-    }
+.link{
+    display:block;
+    width:100%;
+    text-decoration:none;
+    color:white;
+    background:rgba(255,40,40,.15);
+    border:2px solid rgba(255,60,60,.45);
+    padding:16px;
+    border-radius:14px;
+    margin:14px 0;
+    font-weight:600;
+    transition:.25s;
+}
 
-    .button:hover {
-      transform: scale(1.03);
-    }
+.link:hover{
+    background:#ff2d2d;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(255,0,0,.35);
+}
 
-    .icon {
-      color: #ff5b5b;
-      font-size: 24px;
-    }
+.footer{
+    margin-top:28px;
+    color:#bbb;
+    font-size:.8rem;
+}
+</style>
 
-    .footer {
-      margin-top: 35px;
-      color: #ff7777;
-      letter-spacing: 4px;
-      font-size: 12px;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="container">
 
-    <img class="profile" src="image.png" alt="Spicy Velma">
+<div class="container">
 
-    <h1>Spicy Velma ♡</h1>
+<img src="image.png" class="profile" alt="Spicy Velma">
 
-    <div class="bio">GAMER • CREATOR • COSPLAYER</div>
+<h1>Spicy Velma</h1>
 
-    <div class="flame">─ 🔥 ─</div>
+<p class="username">@spicyvelma</p>
 
-    <a class="button" href="https://instagram.com/YOURUSERNAME">
-      <span class="icon">◎</span> INSTAGRAM <span>›</span>
-    </a>
+<a class="link" href="https://onlyfans.com/spicy_velma" target="_blank">
+❤️ Exclusive Content
+</a>
 
-    <a class="button" href="https://snapchat.com/add/YOURUSERNAME">
-      <span class="icon">👻</span> SNAPCHAT <span>›</span>
-    </a>
+<a class="link" href="https://instagram.com/wizkhapizza" target="_blank">
+📸 Instagram
+</a>
 
-    <a class="button" href="https://x.com/YOURUSERNAME">
-      <span class="icon">𝕏</span> X / TWITTER <span>›</span>
-    </a>
+<a class="link" href="https://www.tiktok.com/@spicyvelma" target="_blank">
+🎵 TikTok
+</a>
 
-    <a class="button" href="https://tiktok.com/@YOURUSERNAME">
-      <span class="icon">♪</span> TIKTOK <span>›</span>
-    </a>
+<div class="footer">
+Thanks for stopping by ❤️
+</div>
 
-    <a class="button" href="YOUR-EXCLUSIVE-LINK">
-      <span class="icon">♡</span> EXCLUSIVE CONTENT ✨ <span>›</span>
-    </a>
+</div>
 
-    <div class="footer">© 2026 SPICY VELMA</div>
-
-  </div>
 </body>
 </html>
