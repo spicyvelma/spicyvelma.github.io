@@ -1,43 +1,49 @@
 /* --- GLOBAL --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; }
 
 /* --- NAVIGATION --- */
 .navbar {
     position: fixed; top: 25px; left: 50%; transform: translateX(-50%);
     background: rgba(0,0,0,0.85); border: 1px solid rgba(255, 64, 64, 0.4);
-    box-shadow: 0 0 10px rgba(255, 64, 64, 0.3);
-    padding: 15px 40px; border-radius: 12px;
-    display: flex; gap: 30px; z-index: 1000;
+    padding: 10px 30px; border-radius: 8px; display: flex; gap: 30px;
+    box-shadow: 0 0 10px rgba(255, 64, 64, 0.2); z-index: 1000;
 }
-.navbar a { color: white; text-decoration: none; font-weight: 500; letter-spacing: 1px; transition: 0.3s; cursor: pointer; }
-.navbar a:hover { color: #ff4040; text-shadow: 0 0 8px #ff4040; }
+.navbar a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+.navbar a:hover { color: #ff4040; text-shadow: 0 0 5px #ff4040; }
 
-/* --- HOME PAGE --- */
-.page { display: none; padding: 140px 5% 50px; text-align: center; }
+/* --- HOME & LOGO --- */
+.page { display: none; padding-top: 150px; text-align: center; }
 .page.active { display: block; }
-.logo { width: 350px; animation: float 3s ease-in-out infinite; margin-bottom: 20px; }
+.logo { width: 350px; animation: float 3s ease-in-out infinite; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-/* --- ABOUT ME (Reference: image_2.png) --- */
-.about-container { display: flex; align-items: center; justify-content: center; gap: 50px; max-width: 900px; margin: 0 auto; text-align: left; }
-.about-photo { width: 300px; height: 400px; object-fit: cover; border: 2px solid #ff4040; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 64, 64, 0.5); }
-.about-text h1 { font-family: 'Dancing Script', cursive; color: #ff4040; font-size: 3.5rem; margin-bottom: 20px; }
-.about-text p { font-size: 1.1rem; line-height: 1.6; }
-
-/* --- SOCIALS (Reference: image_3.png) --- */
-.social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; max-width: 1100px; margin: 40px auto; }
-.social-card { 
-    background: #0a0a0a; padding: 40px; border: 1px solid #ff4040; 
-    border-radius: 20px; text-align: center; transition: 0.3s;
+/* --- ABOUT ME (Photo Fixed) --- */
+.about-container { 
+    display: flex; justify-content: center; align-items: flex-start; 
+    gap: 50px; padding: 50px; max-width: 1000px; margin: 0 auto; 
 }
-.social-card:hover { box-shadow: 0 0 20px rgba(255, 64, 64, 0.4); }
-.social-card img { width: 60px; margin-bottom: 20px; }
-
-/* --- CONTACT --- */
-.contact-container { text-align: center; margin-top: 50px; }
-.email-btn { 
-    display: inline-block; padding: 20px 40px; border: 2px solid #ff4040; 
-    border-radius: 12px; font-weight: bold; cursor: pointer; transition: 0.3s;
+.about-photo { 
+    width: 300px; /* Forces width */
+    height: 380px; /* Forces height */
+    object-fit: cover; /* Keeps photo from stretching/blowing up */
+    border: 2px solid #ff4040; border-radius: 15px; 
+    box-shadow: 0 0 15px rgba(255, 64, 64, 0.3);
 }
-.email-btn:hover { background: #ff4040; color: #000; }
+.about-text { flex: 1; text-align: left; }
+.about-text h1 { font-family: cursive; color: #ff4040; font-size: 2.5rem; margin-bottom: 15px; }
+
+/* --- FUN FACTS --- */
+.fact-box { 
+    border: 1px solid #ff4040; padding: 20px; 
+    border-radius: 10px; background: #0a0a0a; margin-top: 20px;
+}
+
+/* --- SOCIALS & CONTACT --- */
+.social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 50px; }
+.social-card { border: 1px solid #ff4040; padding: 30px; border-radius: 15px; text-align: center; }
+.copy-email-btn { 
+    padding: 15px 30px; border: 1px solid #ff4040; border-radius: 8px;
+    background: transparent; color: white; cursor: pointer; font-size: 1rem;
+}
+.copy-email-btn:hover { background: #ff4040; }
