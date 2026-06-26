@@ -1,49 +1,43 @@
-/* --- GLOBAL --- */
+/* --- CORE RESET & LAYOUT --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { background: #030000; color: white; font-family: Arial, sans-serif; }
 
-/* --- NAVIGATION --- */
-.navbar {
-    position: fixed; top: 25px; left: 50%; transform: translateX(-50%);
-    background: rgba(0,0,0,0.85); border: 1px solid rgba(255, 64, 64, 0.4);
-    padding: 10px 30px; border-radius: 8px; display: flex; gap: 30px;
-    box-shadow: 0 0 10px rgba(255, 64, 64, 0.2); z-index: 1000;
+/* --- BACKGROUND GLOW --- */
+body::before, body::after {
+    content: ""; position: fixed; top: 0; width: 260px; height: 100vh;
+    background: radial-gradient(circle, #ff2200 0%, rgba(255, 0, 0, 0.45) 30%, transparent 70%);
+    filter: blur(18px); opacity: 0.9; z-index: -2;
 }
-.navbar a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
-.navbar a:hover { color: #ff4040; text-shadow: 0 0 5px #ff4040; }
+body::before { left: -100px; }
+body::after { right: -100px; }
 
-/* --- HOME & LOGO --- */
-.page { display: none; padding-top: 150px; text-align: center; }
-.page.active { display: block; }
-.logo { width: 350px; animation: float 3s ease-in-out infinite; }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+/* --- NAV --- */
+.nav {
+    position: fixed; top: 22px; left: 50%; transform: translateX(-50%);
+    width: 76%; height: 64px; z-index: 50; display: flex;
+    justify-content: space-around; align-items: center;
+    border: 1px solid #ff1a1a; border-radius: 14px;
+    background: rgba(0, 0, 0, 0.82); box-shadow: 0 0 25px #7a0000;
+}
+.tab { background: none; border: none; color: white; font-size: 14px; font-weight: bold; letter-spacing: 2px; cursor: pointer; }
+.tab.active, .tab:hover { color: #ff2525; text-shadow: 0 0 15px red; }
 
-/* --- ABOUT ME (Photo Fixed) --- */
-.about-container { 
-    display: flex; justify-content: center; align-items: flex-start; 
-    gap: 50px; padding: 50px; max-width: 1000px; margin: 0 auto; 
+/* --- ABOUT ME (Layout Fix) --- */
+.about-layout { display: grid; grid-template-columns: 1fr 1.25fr; gap: 42px; align-items: center; margin-top: 5px; }
+/* This fixes the blown up photo by forcing fixed dimensions */
+.about-main { 
+    width: 300px !important; height: 380px !important; 
+    object-fit: cover !important; border: 1px solid #ff1a1a; 
+    border-radius: 14px; box-shadow: 0 0 22px #8b0000; 
 }
-.about-photo { 
-    width: 300px; /* Forces width */
-    height: 380px; /* Forces height */
-    object-fit: cover; /* Keeps photo from stretching/blowing up */
-    border: 2px solid #ff4040; border-radius: 15px; 
-    box-shadow: 0 0 15px rgba(255, 64, 64, 0.3);
-}
-.about-text { flex: 1; text-align: left; }
-.about-text h1 { font-family: cursive; color: #ff4040; font-size: 2.5rem; margin-bottom: 15px; }
+.about-text h3 span { color: #ff2525; font-family: cursive; font-size: 48px; }
 
-/* --- FUN FACTS --- */
-.fact-box { 
-    border: 1px solid #ff4040; padding: 20px; 
-    border-radius: 10px; background: #0a0a0a; margin-top: 20px;
-}
+/* --- SOCIALS --- */
+.social-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 38px; }
+.social-card { min-height: 370px; padding: 24px 14px; color: white; border: 1px solid #ff1a1a; border-radius: 14px; transition: 0.25s; }
+.social-card:hover { transform: translateY(-8px); box-shadow: 0 0 35px red; }
 
-/* --- SOCIALS & CONTACT --- */
-.social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 50px; }
-.social-card { border: 1px solid #ff4040; padding: 30px; border-radius: 15px; text-align: center; }
-.copy-email-btn { 
-    padding: 15px 30px; border: 1px solid #ff4040; border-radius: 8px;
-    background: transparent; color: white; cursor: pointer; font-size: 1rem;
-}
-.copy-email-btn:hover { background: #ff4040; }
+/* --- CONTACT --- */
+.email-box { width: 560px; max-width: 90%; margin: 24px auto; border: 1px solid #ff1a1a; border-radius: 14px; background: rgba(0, 0, 0, 0.65); padding: 24px; }
+.email-box button { background: transparent; cursor: pointer; border: 1px solid #ff2525; color: #ff2525; padding: 11px 16px; border-radius: 10px; }
