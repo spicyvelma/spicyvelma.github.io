@@ -34,7 +34,7 @@ body::after{
 
     top:0;
 
-    width:420px;
+    width:280px;
 
     height:100vh;
 
@@ -42,26 +42,32 @@ body::after{
 
     z-index:-1;
 
-    opacity:1;
-    filter:blur(3px) saturate(2);
+    opacity:.95;
 
 }
+
 body::before{
-    left:-120px;
+
+    left:0;
+
     background:
-        radial-gradient(ellipse at 20% 95%, rgba(255,0,0,1) 0%, transparent 24%),
-        radial-gradient(ellipse at 45% 75%, rgba(255,100,0,.95) 0%, transparent 22%),
-        radial-gradient(ellipse at 25% 55%, rgba(255,0,0,.9) 0%, transparent 24%),
-        radial-gradient(ellipse at 50% 35%, rgba(255,80,0,.75) 0%, transparent 22%);
+    radial-gradient(circle at 20% 90%,#ff2a00 0%,transparent 18%),
+    radial-gradient(circle at 30% 70%,#ff6400 0%,transparent 18%),
+    radial-gradient(circle at 15% 45%,#ff0000 0%,transparent 18%),
+    radial-gradient(circle at 35% 25%,#ff7b00 0%,transparent 18%);
+
 }
 
 body::after{
-    right:-120px;
+
+    right:0;
+
     background:
-        radial-gradient(ellipse at 80% 95%, rgba(255,0,0,1) 0%, transparent 24%),
-        radial-gradient(ellipse at 55% 75%, rgba(255,100,0,.95) 0%, transparent 22%),
-        radial-gradient(ellipse at 75% 55%, rgba(255,0,0,.9) 0%, transparent 24%),
-        radial-gradient(ellipse at 50% 35%, rgba(255,80,0,.75) 0%, transparent 22%);
+    radial-gradient(circle at 80% 90%,#ff2a00 0%,transparent 18%),
+    radial-gradient(circle at 70% 70%,#ff6400 0%,transparent 18%),
+    radial-gradient(circle at 85% 45%,#ff0000 0%,transparent 18%),
+    radial-gradient(circle at 65% 25%,#ff7b00 0%,transparent 18%);
+
 }
 
 /* ---------- NAV ---------- */
@@ -235,10 +241,10 @@ body::after{
 
 .about-container{
     display:grid;
-    grid-template-columns:430px 1fr;
+    grid-template-columns:420px 1fr;
     gap:60px;
     align-items:center;
-    width:88%;
+    width:90%;
     margin:0 auto 40px;
 }
 
@@ -249,7 +255,7 @@ body::after{
     object-position:center top;
     border-radius:18px;
     border:1px solid rgba(255,60,60,.35);
-    box-shadow:0 0 30px rgba(255,40,40,.35);
+    box-shadow:0 0 30px rgba(255,0,0,.25);
 }
 
 .about-right{
