@@ -1,6 +1,12 @@
-/* --- GLOBAL --- */
+/* --- GLOBAL RESET & BODY --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+body { 
+    background-color: #050505; 
+    color: #ffffff; 
+    font-family: 'Inter', sans-serif; 
+    overflow-x: hidden; 
+    min-height: 100vh;
+}
 
 /* --- NAVIGATION --- */
 .navbar {
@@ -10,21 +16,25 @@ body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; overf
     padding: 20px 50px; border-radius: 12px;
     display: flex; gap: 40px; z-index: 1000;
 }
-.navbar a { color: white; text-decoration: none; font-weight: 700; letter-spacing: 2px; transition: 0.3s; cursor: pointer; }
+.navbar a { 
+    color: white; text-decoration: none; font-weight: 700; 
+    letter-spacing: 2px; transition: 0.3s; cursor: pointer;
+}
 .navbar a:hover, .navbar a.active { color: #ff4040; text-shadow: 0 0 8px #ff4040; }
 
-/* --- PAGES & HEADERS --- */
-.page { display: none; padding: 120px 5% 50px; text-align: center; }
+/* --- PAGE & HEADER STRUCTURE --- */
+.page { display: none; padding: 140px 5% 50px; text-align: center; }
 .page.active { display: block; }
+
 h1 { 
     font-family: 'Cinzel', serif; font-size: 3rem; 
     letter-spacing: 8px; text-transform: uppercase;
-    color: #ffffff; margin-top: 10px; margin-bottom: 20px;
+    color: #ffffff; margin-bottom: 20px;
 }
 
 /* --- LOGO (Animated) --- */
 .logo { 
-    width: 400px; max-width: 90%; 
+    width: 400px; max-width: 90%; margin-bottom: 25px;
     animation: float 3s ease-in-out infinite; 
 }
 @keyframes float {
@@ -33,42 +43,49 @@ h1 {
     100% { transform: translateY(0px); }
 }
 
-/* --- GALLERIES (Squared & Hover-Pop) --- */
-.home-gallery, .about-gallery { 
+/* --- HOME GALLERY --- */
+.home-gallery { 
     display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 20px; margin-top: 30px; 
 }
-.home-gallery img, .about-gallery img {
+.home-gallery img {
     width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
     border-radius: 15px; border: 2px solid rgba(255, 64, 64, 0.3);
     transition: all 0.4s ease-in-out;
 }
-.home-gallery img:hover, .about-gallery img:hover {
+.home-gallery img:hover {
     transform: scale(1.05); border-color: #ff4040;
     box-shadow: 0 0 20px #ff4040; cursor: pointer;
 }
 
-/* --- ABOUT ME --- */
-.about-container { 
-    display: flex; flex-wrap: wrap; justify-content: center; 
-    gap: 40px; align-items: flex-start; margin: 40px auto; max-width: 1000px;
+/* --- ABOUT ME (Matches image_d597e5.jpg) --- */
+.about-text { 
+    max-width: 800px; margin: 0 auto 40px auto; 
+    line-height: 1.6; font-size: 1.1rem;
 }
-.about-main { 
-    width: 300px; border-radius: 20px; border: 2px solid #ff4040; 
-    box-shadow: 0 0 15px rgba(255, 64, 64, 0.5); overflow: hidden;
+.quick-facts-title { 
+    font-size: 1.5rem; color: #fff; margin-bottom: 20px; 
+    text-transform: uppercase; font-weight: bold;
 }
 .fact-card { 
-    background: #111; padding: 25px; border-radius: 15px; 
-    border: 1px solid #ff4040; box-shadow: 0 0 10px rgba(255, 64, 64, 0.2); 
-    transition: 0.3s;
+    width: 100%; max-width: 800px; margin: 0 auto 20px auto;
+    padding: 30px; border-radius: 12px;
+    border: 1px solid #ff4040; background: #0a0a0a;
+    box-shadow: 0 0 10px rgba(255, 64, 64, 0.2);
+    text-align: center;
 }
-.fact-card:hover { box-shadow: 0 0 20px rgba(255, 64, 64, 0.4); border-color: #ff4040; }
+.fact-card h3 { color: #ff4040; margin-bottom: 10px; text-transform: uppercase; }
+.fact-card p { margin-bottom: 5px; }
 
 /* --- SOCIALS --- */
-.social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1000px; margin: 30px auto; }
+.social-grid { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; max-width: 1000px; margin: 30px auto; 
+}
 .social-card { 
     background: #111; padding: 30px; border: 1px solid #333; 
-    border-radius: 15px; color: #fff; text-decoration: none; transition: 0.3s;
+    border-radius: 15px; color: #fff; text-decoration: none; 
+    transition: 0.3s;
 }
 .social-card:hover { border-color: #ff4040; box-shadow: 0 0 15px rgba(255,64,64,0.3); }
 
