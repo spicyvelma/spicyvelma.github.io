@@ -81,7 +81,7 @@ h1,h2{
 .home-gallery img,.about-gallery img,.about-main{
   width:100%;
   height:420px;
-  object-fit:cover;
+  object-position:center center;
   border:1px solid #ff1a1a;
   border-radius:12px;
   box-shadow:0 0 22px #7a0000;
