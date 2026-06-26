@@ -259,7 +259,7 @@ body::after{
 
 .about-right h2{
     font-family:'Cinzel',serif;
-    font-size:38px;
+    font-size:28px;
     margin-bottom:25px;
     letter-spacing:2px;
 }
@@ -267,7 +267,7 @@ body::after{
 .about-right h2 span{
     font-family:'Great Vibes',cursive;
     color:#ff4d4d;
-    font-size:64px;
+    font-size:54px;
     font-weight:400;
 }
 
