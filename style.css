@@ -271,11 +271,15 @@ body::after{
 
 .about-right h2 span{
     font-family:'Great Vibes',cursive;
-    color:#ff4d4d;
     font-size:54px;
     font-weight:400;
+    margin-left:10px;
+    display:inline-block;
+    background:linear-gradient (45deg, #ff3c3c, #ff8a00);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
-
+    
 .about-right p{
     font-size:18px;
     line-height:1.8;
