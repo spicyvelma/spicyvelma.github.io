@@ -527,7 +527,7 @@ body::after {
 /* Customized Glow Overrides & Interactive Animated Flames */
 body::before,
 body::after {
-    width: 260px !important;
+    width: 380px !important;
     opacity: .85 !important;
     filter: blur(8px) contrast(1.5) saturate(2) !important;
     background-image:
