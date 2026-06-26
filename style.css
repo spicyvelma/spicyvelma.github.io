@@ -31,13 +31,15 @@ body::after {
     height: 100vh;
     pointer-events: none;
     z-index: -1;
-    opacity: 1;
-    filter: blur(3px) saturate(2);
+    opacity: 0.85;
+    filter: blur(8px) contrast(1.5) saturate(2);
+    background-size: 100% 200% !important;
+    animation: realFlame 4s infinite ease-in-out alternate !important;
 }
 
 body::before {
     left: -120px;
-    background:
+    background-image:
         radial-gradient(ellipse at 20% 95%, rgba(255,0,0,1) 0%, transparent 24%),
         radial-gradient(ellipse at 45% 75%, rgba(255,100,0,.95) 0%, transparent 22%),
         radial-gradient(ellipse at 25% 55%, rgba(255,0,0,.9) 0%, transparent 24%),
@@ -46,7 +48,7 @@ body::before {
 
 body::after {
     right: -120px;
-    background:
+    background-image:
         radial-gradient(ellipse at 80% 95%, rgba(255,0,0,1) 0%, transparent 24%),
         radial-gradient(ellipse at 55% 75%, rgba(255,100,0,.95) 0%, transparent 22%),
         radial-gradient(ellipse at 75% 55%, rgba(255,0,0,.9) 0%, transparent 24%),
@@ -204,10 +206,10 @@ body::after {
 }
 
 .about-main:hover {
-    transform: translateY(-6px) scale(1.02); /* Fixed format typos */
-    box-shadow: 0 0 35px rgba(255,0,0,.45);     /* Added missing semicolon */
+    transform: translateY(-6px) scale(1.02); 
+    box-shadow: 0 0 35px rgba(255,0,0,.45);     
     cursor: pointer;
-} /* Fixed: Added missing bracket here to unbreak the rest of the document! */
+} 
 
 .about-right {
     text-align: left;
@@ -227,7 +229,7 @@ body::after {
     font-weight: 400;
     margin-left: 10px;
     display: inline-block;
-    background: linear-gradient(45deg, #ff3c3c, #ff8a00); /* Removed extra spaces */
+    background: linear-gradient(45deg, #ff3c3c, #ff8a00); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -522,30 +524,41 @@ body::after {
     .home-gallery img:nth-child(4) { object-position: center 30%; }
 }
 
-/* Customized Glow Overrides & Flicker Animations */
+/* Customized Glow Overrides & Interactive Animated Flames */
 body::before,
 body::after {
     width: 260px !important;
     opacity: .85 !important;
-    filter: blur(6px) contrast(1.4) saturate(1.8) !important;
-    background:
-        radial-gradient(ellipse at 50% 100%, rgba(255,40,0,.95) 0%, transparent 28%),
-        radial-gradient(ellipse at 35% 75%, rgba(255,90,0,.85) 0%, transparent 24%),
-        radial-gradient(ellipse at 65% 55%, rgba(255,0,0,.75) 0%, transparent 22%),
-        radial-gradient(ellipse at 45% 30%, rgba(255,80,0,.55) 0%, transparent 20%) !important;
-    animation: flameFlicker 3s infinite alternate ease-in-out;
+    filter: blur(8px) contrast(1.5) saturate(2) !important;
+    background-image:
+        radial-gradient(ellipse at 50% 100%, rgba(255,60,0,.95) 0%, transparent 35%),
+        radial-gradient(ellipse at 35% 75%, rgba(255,120,0,.85) 0%, transparent 30%),
+        radial-gradient(ellipse at 65% 55%, rgba(255,30,0,.75) 0%, transparent 25%),
+        radial-gradient(ellipse at 45% 30%, rgba(255,100,0,.55) 0%, transparent 20%) !important;
+    animation: realFlame 4s infinite ease-in-out alternate !important;
 }
 
 body::before { left: -45px !important; }
 body::after { right: -45px !important; }
 
-@keyframes flameFlicker {
-    from {
-        transform: scaleY(1) scaleX(1);
-        opacity: .75;
+@keyframes realFlame {
+    0% {
+        transform: scaleY(1) scaleX(1) translateX(0);
+        background-position: 0% 100%, 0% 100%, 0% 100%, 0% 100%;
+        opacity: 0.75;
     }
-    to {
-        transform: scaleY(1.08) scaleX(1.05);
-        opacity: 1;
+    33% {
+        transform: scaleY(1.06) scaleX(0.94) translateX(-4px);
+        background-position: 0% 85%, 4% 75%, -3% 80%, 0% 90%;
+    }
+    66% {
+        transform: scaleY(0.94) scaleX(1.06) translateX(4px);
+        background-position: 0% 92%, -4% 60%, 3% 65%, -2% 70%;
+        opacity: 0.95;
+    }
+    100% {
+        transform: scaleY(1.12) scaleX(0.98) translateX(0);
+        background-position: 0% 75%, 0% 45%, 0% 55%, 0% 65%;
+        opacity: 0.85;
     }
 }
