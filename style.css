@@ -527,19 +527,28 @@ body::after {
 /* Customized Glow Overrides & Interactive Animated Flames */
 body::before,
 body::after {
-    width: 380px !important;
-    opacity: .85 !important;
-    filter: blur(8px) contrast(1.5) saturate(2) !important;
-    background-image:
-        radial-gradient(ellipse at 50% 100%, rgba(255,60,0,.95) 0%, transparent 35%),
-        radial-gradient(ellipse at 35% 75%, rgba(255,120,0,.85) 0%, transparent 30%),
-        radial-gradient(ellipse at 65% 55%, rgba(255,30,0,.75) 0%, transparent 25%),
-        radial-gradient(ellipse at 45% 30%, rgba(255,100,0,.55) 0%, transparent 20%) !important;
-    animation: realFlame 4s infinite ease-in-out alternate !important;
+    width: 25% !important;
+    height: 100vh !important;
+    position: fixed !important;
+    top: 0 !important;
+    opacity: 0.85 !important;
+    background-size: cover !important;
+    background-repeat: repeat-y !important;
+    animation: realFlame 12s infinite linear !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
 }
 
-body::before { left: 0px !important; }
-body::after { right: 0px !important; }
+body::before { 
+    left: 0 !important; 
+    background-image: url('https://i.imgur.com/bC8wY2R.png') !important; 
+}
+
+body::after { 
+    right: 0 !important; 
+    background-image: url('https://i.imgur.com/bC8wY2R.png') !important;
+    transform: scaleX(-1) !important; 
+}
 
 @keyframes realFlame {
     0% {
