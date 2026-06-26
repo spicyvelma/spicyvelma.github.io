@@ -1,323 +1,71 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-html{
-    scroll-behavior:smooth;
-}
+<head>
 
-body{
-    background:#050505;
-    color:#fff;
-    font-family:Inter,Arial,sans-serif;
-    overflow:hidden;
-}
+<meta charset="UTF-8">
 
-/* ---------- FLAMES ---------- */
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body::before,
-body::after{
-    content:"";
-    position:fixed;
-    top:0;
-    width:320px;
-    height:100vh;
-    z-index:-1;
-    pointer-events:none;
-    background-repeat:no-repeat;
-    background-size:cover;
-    opacity:.95;
-}
+<title>Spicy Velma</title>
 
-body::before{
-    left:0;
-    background-image:
-        radial-gradient(circle at 20% 90%,#ff2a00 0%,transparent 18%),
-        radial-gradient(circle at 35% 75%,#ff5b00 0%,transparent 18%),
-        radial-gradient(circle at 15% 60%,#ff0000 0%,transparent 20%),
-        radial-gradient(circle at 40% 40%,#ff8800 0%,transparent 18%);
-}
+<link rel="stylesheet" href="style.css">
 
-body::after{
-    right:0;
-    background-image:
-        radial-gradient(circle at 80% 90%,#ff2a00 0%,transparent 18%),
-        radial-gradient(circle at 65% 75%,#ff5b00 0%,transparent 18%),
-        radial-gradient(circle at 85% 60%,#ff0000 0%,transparent 20%),
-        radial-gradient(circle at 60% 40%,#ff8800 0%,transparent 18%);
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-/* ---------- NAV ---------- */
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-nav{
-    position:fixed;
-    top:28px;
-    left:50%;
-    transform:translateX(-50%);
-    width:82%;
-    height:72px;
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:60px;
+</head>
 
-    background:rgba(0,0,0,.75);
+<body>
 
-    border:1px solid rgba(255,0,0,.4);
+<nav>
 
-    border-radius:16px;
+<a class="active" href="index.html">⌂ HOME</a>
 
-    backdrop-filter:blur(12px);
+<a href="about.html">♡ ABOUT ME</a>
 
-    box-shadow:
-    0 0 35px rgba(255,0,0,.22);
+<a href="socials.html">♥ SOCIALS</a>
 
-    z-index:999;
-}
+<a href="contact.html">✉ CONTACT</a>
 
-nav a{
+</nav>
 
-    color:white;
+<main>
 
-    text-decoration:none;
+<section class="page home">
 
-    letter-spacing:2px;
+<img src="logo.png" class="home-logo" alt="Spicy Velma">
 
-    font-size:14px;
+<h1 class="home-title">WELCOME</h1>
 
-    transition:.3s;
+<div class="home-divider">♥</div>
 
-}
+<p class="home-subtitle">
 
-nav a:hover{
+Thank you for stopping by!<br>
 
-    color:#ff2d2d;
+Take a look around and get to know me better!
 
-    text-shadow:0 0 15px red;
+</p>
 
-}
+<div class="home-gallery">
 
-/* ACTIVE PAGE */
+<img src="photo1.jpg" alt="Photo 1">
 
-.active{
+<img src="photo2.jpg" alt="Photo 2">
 
-    color:#ff3d3d !important;
+<img src="photo3.jpg" alt="Photo 3">
 
-    text-shadow:0 0 18px red;
+<img src="photo4.jpg" alt="Photo 4">
+</div>
 
-}
+</section>
 
-/* ---------- MAIN ---------- */
+</main>
 
-main{
+</body>
 
-    width:100vw;
-
-    height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.page{
-
-    width:100%;
-
-    height:100%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-start;
-
-    align-items:center;
-
-    padding-top:120px;
-
-    animation:fade .45s ease;
-
-}
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-
-transform:translateY(12px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-/* ===========================
-   HOME
-=========================== */
-
-.home-logo{
-
-    width:430px;
-
-    max-width:90%;
-
-    margin-bottom:10px;
-
-    filter:
-    drop-shadow(0 0 30px rgba(255,0,0,.45));
-
-    animation:floatLogo 5s ease-in-out infinite;
-
-}
-
-@keyframes floatLogo{
-
-0%{transform:translateY(0px);}
-50%{transform:translateY(-8px);}
-100%{transform:translateY(0px);}
-
-}
-
-.home-title{
-
-    margin-top:-5px;
-
-    font-size:54px;
-
-    letter-spacing:14px;
-
-    font-weight:700;
-
-    color:white;
-
-    text-shadow:
-
-    0 0 18px red,
-
-    0 0 35px rgba(255,0,0,.5);
-
-}
-
-.home-divider{
-
-    margin-top:8px;
-
-    margin-bottom:18px;
-
-    color:#ff3d3d;
-
-    font-size:20px;
-
-    letter-spacing:8px;
-
-}
-
-.home-subtitle{
-
-    text-align:center;
-
-    font-size:18px;
-
-    color:#e6e6e6;
-
-    line-height:1.6;
-
-    margin-bottom:28px;
-
-}
-
-/* ---------- HOME GALLERY ---------- */
-
-.home-gallery{
-
-    width:88%;
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:24px;
-
-}
-
-.home-gallery img{
-
-    width:100%;
-
-    height:255px;
-
-    object-fit:cover;
-
-    border-radius:14px;
-
-    border:1px solid rgba(255,0,0,.45);
-
-    box-shadow:
-
-    0 0 25px rgba(255,0,0,.22);
-
-    transition:.35s;
-
-}
-
-/* fourth image */
-
-.home-gallery img:last-child{
-
-    object-position:center center;
-
-}
-
-/* hover */
-
-.home-gallery img:hover{
-
-    transform:
-
-    translateY(-8px)
-
-    scale(1.02);
-
-    box-shadow:
-
-    0 0 45px rgba(255,40,40,.5);
-
-}
-
-/* desktop fit */
-
-@media(min-width:1200px){
-
-.home-logo{
-
-width:470px;
-
-}
-
-.home-gallery img{
-
-height:240px;
-
-}
-
-.home-subtitle{
-
-margin-bottom:20px;
-
-}
-
-}
+</html>
