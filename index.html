@@ -1,142 +1,323 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spicy Velma</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-  <nav class="nav">
-    <button class="tab active" data-page="home">⌂ HOME</button>
-    <button class="tab" data-page="about">♡ ABOUT ME</button>
-    <button class="tab" data-page="socials">♡ SOCIALS</button>
-    <button class="tab" data-page="contact">✉ CONTACT</button>
-  </nav>
+html{
+    scroll-behavior:smooth;
+}
 
-  <main>
-    <section id="home" class="page active home">
-      <img class="main-logo" src="770EDEEB-1983-4BDC-A1C4-24C8945143B6.png" alt="Spicy Velma Logo">
+body{
+    background:#050505;
+    color:#fff;
+    font-family:Inter,Arial,sans-serif;
+    overflow:hidden;
+}
 
-      <h1>WELCOME</h1>
-      <div class="heart">♥</div>
-      <p class="intro">
-        Thank you for stopping by!<br>
-        Take a look around and get to know me better!
-      </p>
+/* ---------- FLAMES ---------- */
 
-      <div class="home-gallery">
-        <img src="homeimage1.jpeg">
-        <img src="homeimage2.jpeg">
-        <img src="homeimage3.jpeg">
-        <img src="homeimage4.jpeg">
-      </div>
-    </section>
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    top:0;
+    width:320px;
+    height:100vh;
+    z-index:-1;
+    pointer-events:none;
+    background-repeat:no-repeat;
+    background-size:cover;
+    opacity:.95;
+}
 
-    <section id="about" class="page about">
-      <h2>ABOUT ME</h2>
+body::before{
+    left:0;
+    background-image:
+        radial-gradient(circle at 20% 90%,#ff2a00 0%,transparent 18%),
+        radial-gradient(circle at 35% 75%,#ff5b00 0%,transparent 18%),
+        radial-gradient(circle at 15% 60%,#ff0000 0%,transparent 20%),
+        radial-gradient(circle at 40% 40%,#ff8800 0%,transparent 18%);
+}
 
-      <div class="about-layout">
-        <img class="about-main" src="aboutmemain.jpeg">
+body::after{
+    right:0;
+    background-image:
+        radial-gradient(circle at 80% 90%,#ff2a00 0%,transparent 18%),
+        radial-gradient(circle at 65% 75%,#ff5b00 0%,transparent 18%),
+        radial-gradient(circle at 85% 60%,#ff0000 0%,transparent 20%),
+        radial-gradient(circle at 60% 40%,#ff8800 0%,transparent 18%);
+}
 
-        <div class="about-text">
-          <h3>Hi, I’m <span>Spicy Velma</span></h3>
-          <p>I’m a content creator and streamer who loves connecting with people and sharing a part of my life with the world.</p>
-          <p>I’m all about good vibes, positivity, and making people smile. I love building genuine connections with people and creating a space where everyone feels welcome.</p>
-          <div class="pepper">🌶️</div>
-        </div>
-      </div>
+/* ---------- NAV ---------- */
 
-      <h3 class="section-title">QUICK FACTS</h3>
+nav{
+    position:fixed;
+    top:28px;
+    left:50%;
+    transform:translateX(-50%);
+    width:82%;
+    height:72px;
 
-      <div class="facts">
-        <div class="card"><h4>Favorite Games</h4><p>Highlife RP<br>Marvel Rivals<br>Life Is Strange Series</p></div>
-        <div class="card"><h4>Movies / Shows</h4><p>Rick and Morty<br>That 70s Show<br>King Of The Hill<br>Beavis and Butthead<br>Harry Potter Series<br>Guardians of the Galaxy Series</p></div>
-        <div class="card"><h4>Fave Artists</h4><p>The Weeknd<br>A$AP Rocky<br>Drake<br>J. Cole<br>Schoolboy Q<br>Alex LeMirage<br>Trippie Redd</p></div>
-        <div class="card"><h4>Hobbies</h4><p>Gaming<br>Singing<br>Dancing<br>Photography<br>Drawing</p></div>
-        <div class="card"><h4>Favorite Food</h4><p>Pizza<br>Tacos<br>In-N-Out Burger</p></div>
-        <div class="card"><h4>Fun Facts</h4><p>I’m left handed<br>I have won 2 drawing contests<br>I have walked a runway show!</p></div>
-      </div>
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
 
-      <h3 class="section-title">PHOTO GALLERY</h3>
+    background:rgba(0,0,0,.75);
 
-      <div class="about-gallery">
-        <img src="aboutme1.jpeg">
-        <img src="aboutme2.jpeg">
-        <img src="aboutme3.jpeg">
-        <img src="aboutme4.jpeg">
-        <img src="aboutme5.jpeg">
-        <img src="aboutme6.jpeg">
-      </div>
-    </section>
+    border:1px solid rgba(255,0,0,.4);
 
-    <section id="socials" class="page socials">
-      <h2>SOCIALS</h2>
-      <p class="intro">Stay connected with me<br>across all of my platforms!</p>
+    border-radius:16px;
 
-      <div class="social-grid">
-        <a class="social-card" href="https://twitch.tv/spicy_velma" target="_blank">
-          <div class="icon">🎮</div>
-          <h3>TWITCH</h3>
-          <p>Hang out live while I game, chat, and have fun.</p>
-          <span>VISIT CHANNEL</span>
-        </a>
+    backdrop-filter:blur(12px);
 
-        <a class="social-card" href="https://instagram.com/wizkhapizza" target="_blank">
-          <div class="icon">📸</div>
-          <h3>INSTAGRAM</h3>
-          <p>Behind the scenes, photos, stories, and everyday moments.</p>
-          <span>VISIT PAGE</span>
-        </a>
+    box-shadow:
+    0 0 35px rgba(255,0,0,.22);
 
-        <a class="social-card" href="https://youtube.com/@spicyvelma" target="_blank">
-          <div class="icon">▶️</div>
-          <h3>YOUTUBE</h3>
-          <p>Videos, highlights, and future projects.</p>
-          <span>VISIT CHANNEL</span>
-        </a>
+    z-index:999;
+}
 
-        <a class="social-card" href="https://tiktok.com/@spicyvelma" target="_blank">
-          <div class="icon">🎵</div>
-          <h3>TIKTOK</h3>
-          <p>Funny moments, trends, and short clips.</p>
-          <span>VISIT PAGE</span>
-        </a>
+nav a{
 
-        <a class="social-card" href="https://onlyfans.com/spicy_velma" target="_blank">
-          <div class="icon">🌶️</div>
-          <h3>VIP LOUNGE</h3>
-          <p>Exclusive content for my biggest supporters.</p>
-          <span>ENTER LOUNGE</span>
-        </a>
-      </div>
-    </section>
+    color:white;
 
-    <section id="contact" class="page contact">
-      <h2>CONTACT</h2>
+    text-decoration:none;
 
-      <p class="contact-text">
-        Have a question, business inquiry,<br>
-        collaboration idea, or just want to<br>
-        <strong>SAY HELLO?</strong><br>
-        I’d love to hear from you!
-      </p>
+    letter-spacing:2px;
 
-      <div class="email-box">
-        <div class="mail">✉</div>
-        <p>spicy.velma@outlook.com</p>
-        <button onclick="copyEmail()">COPY EMAIL</button>
-        <small id="copyMsg">Email copied!</small>
-      </div>
+    font-size:14px;
 
-      <div class="thanks">
-        <h3>Thanks for the love and support!</h3>
-        <p>I appreciate every single person who takes the time to visit my page.<br>Hope to see you again soon! ❤️</p>
-      </div>
-    </section>
-  </main>
+    transition:.3s;
 
-  <script src="script.js"></script>
-</body>
-</html>
+}
+
+nav a:hover{
+
+    color:#ff2d2d;
+
+    text-shadow:0 0 15px red;
+
+}
+
+/* ACTIVE PAGE */
+
+.active{
+
+    color:#ff3d3d !important;
+
+    text-shadow:0 0 18px red;
+
+}
+
+/* ---------- MAIN ---------- */
+
+main{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.page{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding-top:120px;
+
+    animation:fade .45s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(12px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/* ===========================
+   HOME
+=========================== */
+
+.home-logo{
+
+    width:430px;
+
+    max-width:90%;
+
+    margin-bottom:10px;
+
+    filter:
+    drop-shadow(0 0 30px rgba(255,0,0,.45));
+
+    animation:floatLogo 5s ease-in-out infinite;
+
+}
+
+@keyframes floatLogo{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0px);}
+
+}
+
+.home-title{
+
+    margin-top:-5px;
+
+    font-size:54px;
+
+    letter-spacing:14px;
+
+    font-weight:700;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 18px red,
+
+    0 0 35px rgba(255,0,0,.5);
+
+}
+
+.home-divider{
+
+    margin-top:8px;
+
+    margin-bottom:18px;
+
+    color:#ff3d3d;
+
+    font-size:20px;
+
+    letter-spacing:8px;
+
+}
+
+.home-subtitle{
+
+    text-align:center;
+
+    font-size:18px;
+
+    color:#e6e6e6;
+
+    line-height:1.6;
+
+    margin-bottom:28px;
+
+}
+
+/* ---------- HOME GALLERY ---------- */
+
+.home-gallery{
+
+    width:88%;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+}
+
+.home-gallery img{
+
+    width:100%;
+
+    height:255px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,0,0,.45);
+
+    box-shadow:
+
+    0 0 25px rgba(255,0,0,.22);
+
+    transition:.35s;
+
+}
+
+/* fourth image */
+
+.home-gallery img:last-child{
+
+    object-position:center center;
+
+}
+
+/* hover */
+
+.home-gallery img:hover{
+
+    transform:
+
+    translateY(-8px)
+
+    scale(1.02);
+
+    box-shadow:
+
+    0 0 45px rgba(255,40,40,.5);
+
+}
+
+/* desktop fit */
+
+@media(min-width:1200px){
+
+.home-logo{
+
+width:470px;
+
+}
+
+.home-gallery img{
+
+height:240px;
+
+}
+
+.home-subtitle{
+
+margin-bottom:20px;
+
+}
+
+}
