@@ -1,25 +1,25 @@
-const tabs = document.querySelectorAll(".tab");
+const navLinks = document.querySelectorAll(".navbar a");
 const pages = document.querySelectorAll(".page");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    const target = tab.dataset.page;
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        const pageId = link.getAttribute("data-page");
 
-    tabs.forEach(t => t.classList.remove("active"));
-    pages.forEach(p => p.classList.remove("active"));
+        navLinks.forEach(item => item.classList.remove("active"));
+        pages.forEach(page => page.classList.remove("active"));
 
-    tab.classList.add("active");
-    document.getElementById(target).classList.add("active");
-  });
+        link.classList.add("active");
+        document.getElementById(pageId).classList.add("active");
+    });
 });
 
 function copyEmail(){
-  const email = "spicy.velma@outlook.com";
-  navigator.clipboard.writeText(email).then(() => {
-    const msg = document.getElementById("copyMsg");
-    msg.style.display = "block";
+    navigator.clipboard.writeText("spicy.velma@outlook.com");
+
+    const message = document.getElementById("copyMessage");
+    message.textContent = "Email copied!";
+
     setTimeout(() => {
-      msg.style.display = "none";
+        message.textContent = "";
     }, 2000);
-  });
 }
