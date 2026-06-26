@@ -626,3 +626,41 @@ body::after{
         width:90%;
     }
 }
+@media (min-width: 901px){
+  #home{
+    padding-top:85px;
+  }
+
+  .logo{
+    width:360px;
+    margin-bottom:0;
+  }
+
+  .hero h1{
+    font-size:42px;
+    margin-top:-18px;
+  }
+
+  .divider{
+    margin:2px 0 8px;
+  }
+
+  .hero p{
+    font-size:15px;
+    line-height:1.25;
+    margin-bottom:12px;
+  }
+
+  .home-gallery{
+    width:84%;
+    gap:18px;
+  }
+
+  .home-gallery img{
+    height:185px;
+  }
+
+  .home-gallery img:nth-child(4){
+    object-position:center 30%;
+  }
+}
