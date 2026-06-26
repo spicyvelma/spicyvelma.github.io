@@ -245,9 +245,10 @@ body::after{
 .about-main{
     width:100%;
     height:auto;
-    object-fit:contain;
-    padding: 20px;
+    object-fit: normal;
+    padding: 0px;
     border-radius:18px;
+    max-width: 350px;
     border:1px solid rgba(255,60,60,.35);
     box-shadow:0 0 30px rgba(255,40,40,.35);
 }
