@@ -2,70 +2,144 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Spicy Velma</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
-<title>Spicy Velma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<nav>
+<nav class="navbar">
 
-<a class="active" href="index.html">⌂ HOME</a>
+    <a class="active" data-page="home">HOME</a>
 
-<a href="about.html">♡ ABOUT ME</a>
+    <a data-page="about">ABOUT ME</a>
 
-<a href="socials.html">♥ SOCIALS</a>
+    <a data-page="socials">SOCIALS</a>
 
-<a href="contact.html">✉ CONTACT</a>
+    <a data-page="contact">CONTACT</a>
 
 </nav>
 
 <main>
 
-<section class="page home">
+<section id="home" class="page active">
 
-<img src="logo.png" class="home-logo" alt="Spicy Velma">
+<div class="hero">
 
-<h1 class="home-title">WELCOME</h1>
+<img src="image.png" class="logo">
 
-<div class="home-divider">♥</div>
+<h1>WELCOME</h1>
 
-<p class="home-subtitle">
+<div class="divider">
+♥
+</div>
+
+<p>
 
 Thank you for stopping by!<br>
 
-Take a look around and get to know me better!
+Take a look around and get to know me better.
 
 </p>
 
 <div class="home-gallery">
 
-<img src="photo1.jpg" alt="Photo 1">
+<img src="homeimage1.jpeg">
 
-<img src="photo2.jpg" alt="Photo 2">
+<img src="homeimage2.jpeg">
 
-<img src="photo3.jpg" alt="Photo 3">
+<img src="homeimage3.jpeg">
 
-<img src="photo4.jpg" alt="Photo 4">
+<img src="homeimage4.jpeg">
+
+</div>
+
 </div>
 
 </section>
 
-</main>
+<section id="about" class="page">
 
-</body>
+<div class="about-container">
 
-</html>
+<div class="about-left">
+
+<img src="aboutmemain.jpeg" class="about-main">
+
+</div>
+
+<div class="about-right">
+
+<h2>Hi, I'm <span>Spicy Velma</span></h2>
+
+<p>
+I'm a content creator who loves gaming, streaming, photography, and connecting with amazing people online.
+</p>
+
+<p>
+Whether you're here from Twitch, Instagram, TikTok, YouTube, or my VIP Lounge, I'm so happy you're here.
+</p>
+
+<p>
+I hope you enjoy looking around and getting to know me a little better.
+</p>
+
+</div>
+
+</div>
+
+<h3 class="section-title">QUICK FACTS</h3>
+
+<div class="facts">
+
+<div class="fact-card">
+<h4>Favorite Games</h4>
+<p>HighLife RP<br>Marvel Rivals<br>Life Is Strange</p>
+</div>
+
+<div class="fact-card">
+<h4>Favorite Shows</h4>
+<p>Rick & Morty<br>That 70s Show<br>King of the Hill</p>
+</div>
+
+<div class="fact-card">
+<h4>Favorite Artists</h4>
+<p>The Weeknd<br>J. Cole<br>A$AP Rocky</p>
+</div>
+
+<div class="fact-card">
+<h4>Hobbies</h4>
+<p>Gaming<br>Singing<br>Photography<br>Drawing</p>
+</div>
+
+<div class="fact-card">
+<h4>Favorite Food</h4>
+<p>Pizza<br>Tacos<br>In-N-Out</p>
+</div>
+
+<div class="fact-card">
+<h4>Fun Facts</h4>
+<p>Left handed<br>Won 2 drawing contests<br>Walked a runway show</p>
+</div>
+
+</div>
+
+<h3 class="section-title">PHOTO GALLERY</h3>
+
+<div class="about-gallery">
+
+<img src="aboutme1.jpeg">
+<img src="aboutme2.jpeg">
+<img src="aboutme3.jpeg">
+<img src="aboutme4.jpeg">
+<img src="aboutme5.jpeg">
+<img src="aboutme6.jpeg">
