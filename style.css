@@ -327,12 +327,14 @@ body::after {
 
 #socials .social-grid {
     display: flex;
-    flex-direction: column; /* Stacks links vertically */
+    flex-direction: column;
     align-items: center;
     gap: 15px;
     width: 90%;
-    max-width: 450px; /* Keeps the buttons from getting too wide */
-    margin: 40px auto;
+    max-width: 500px;
+    
+    /* Change this from 40px to a smaller number, like 15px */
+    margin: 15px auto 40px auto; 
 }
 
 #socials .social-card {
