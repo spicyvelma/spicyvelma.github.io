@@ -187,8 +187,8 @@ body::after {
 .about-container {
     display: grid;
     grid-template-columns: 430px 1fr;
-    gap: 60px;
-    align-items: left;
+    gap: 20px;
+    align-items: center;
     width: 88%;
     margin: 0 auto 40px;
 }
