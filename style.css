@@ -392,15 +392,15 @@ body::after {
 .contact-card {
     background: rgba(15, 15, 15, 0.85);
     border: 2px solid rgba(255, 60, 60, 0.4);
-    border-radius: 20px;
-    padding: 15px;         /* Further reduced padding to minimize space */
+    border-radius: 20px; /* Keep the corners soft */
+    padding: 20px;
     margin: 20px auto;
-    width: fit-content;    /* This shrinks the box to fit the content exactly */
-    max-width: 300px;      /* Restricts the box width so it forces a wrap */
+    width: fit-content;
+    min-width: 250px; /* Ensures it has enough space for the email */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .mail-icon {
@@ -411,27 +411,26 @@ body::after {
 }
 
 .contact-card h3 {
-    font-size: 16px;       /* Smaller font size helps it fit or wrap better */
+    font-size: 16px;
     margin: 0;
-    word-break: break-all; /* Forces a break at any character if needed */
     text-align: center;
 }
 
 .contact-card button {
     background: transparent;
-    color: #ff4d4d;
-    border: 1px solid #ff4d4d;
-    padding: 13px 30px;
-    border-radius: 10px;
-    letter-spacing: 2px;
+    color: #ff3c3c;
+    border: 1px solid #ff3c3c;
+    padding: 8px 20px;
+    border-radius: 50px; /* Makes it pill-shaped like your other socials */
     cursor: pointer;
-    transition: .3s;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: 0.3s;
 }
 
 .contact-card button:hover {
-    background: #ff2525;
+    background: #ff3c3c;
     color: white;
-    box-shadow: 0 0 25px red;
 }
 
 #copyMessage {
