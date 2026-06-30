@@ -565,9 +565,9 @@ body::after { right: -45px !important; }
 
 /* Specific overrides for About Me gallery images 1 and 2 */
 #about .about-gallery img:nth-child(1) {
-    object-position: top center;
+    object-position: top center !important;
 }
 
 #about .about-gallery img:nth-child(2) {
-    object-position: 50% 20%; 
+    object-position: 50% 20% !important; 
 }
