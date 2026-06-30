@@ -325,48 +325,52 @@ body::after {
     margin-bottom: 42px;
 }
 
-.social-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
-    width: 92%;
-    margin: 0 auto;
+#socials .social-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 95%;
+    margin: 40px auto;
 }
 
-.social-card {
-    min-height: 360px;
-    background: rgba(15,15,15,.78);
-    border: 1px solid rgba(255,60,60,.32);
-    border-radius: 18px;
-    padding: 35px 22px;
-    color: white;
+#socials .social-card {
+    width: 240px;
+    min-height: 380px;
+    background: rgba(15, 15, 15, 0.85);
+    border: 2px solid rgba(255, 60, 60, 0.4);
+    border-radius: 24px;
+    padding: 40px 20px;
     text-decoration: none;
-    box-shadow: 0 0 24px rgba(255,0,0,.18);
+    color: white;
+    text-align: center;
+    transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 22px;
-    transition: .3s ease;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.15);
 }
 
-.social-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 40px rgba(255,0,0,.45);
+#socials .social-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(255, 60, 60, 0.8);
+    box-shadow: 0 0 45px rgba(255, 0, 0, 0.4);
 }
 
 .social-icon {
     font-size: 58px;
     filter: drop-shadow(0 0 12px red);
+    margin-bottom: 15px;
 }
 
-.social-card h3 {
+#socials .social-card h3 {
     font-family: 'Cinzel', serif;
     font-size: 24px;
     letter-spacing: 4px;
 }
 
-.social-card p {
+#socials .social-card p {
     color: #ddd;
     font-size: 15px;
 }
