@@ -309,8 +309,7 @@ body::after {
 /* ======================================
    SOCIALS SECTION
 ====================================== */
-#socials h1,
-#contact h1 {
+#socials h1 {
     font-family: 'Cinzel', serif;
     font-size: 54px;
     letter-spacing: 12px;
@@ -336,7 +335,7 @@ body::after {
 
 #socials .social-card {
     width: 240px;
-    min-height: 380px;
+    min-height: 320px;
     background: rgba(15, 15, 15, 0.85);
     border: 2px solid rgba(255, 60, 60, 0.4);
     border-radius: 24px;
@@ -348,7 +347,7 @@ body::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.15);
 }
 
@@ -358,21 +357,26 @@ body::after {
     box-shadow: 0 0 45px rgba(255, 0, 0, 0.4);
 }
 
-.social-icon {
-    font-size: 58px;
-    filter: drop-shadow(0 0 12px red);
-    margin-bottom: 15px;
+/* THIS FIXES THE LOGO SIZE AND GLOW */
+.social-logo {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: invert(1) brightness(2);
+    display: block;
 }
 
 #socials .social-card h3 {
     font-family: 'Cinzel', serif;
-    font-size: 24px;
-    letter-spacing: 4px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
 #socials .social-card p {
-    color: #ddd;
-    font-size: 15px;
+    color: #aaa;
+    font-size: 14px;
 }
 
 .vip {
