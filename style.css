@@ -1,6 +1,7 @@
 /* ======================================
    GLOBAL STYLES & CORE SETUP
 ====================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +17,10 @@ body {
     color: white;
 }
 
-/* ---------- FLAME BACKGROUND ---------- */
+/* ======================================
+   BACKGROUND
+====================================== */
+
 body {
     position: relative;
     background: radial-gradient(circle at center, #170000 0%, #070707 70%);
@@ -27,35 +31,58 @@ body::after {
     content: "";
     position: fixed;
     top: 0;
-    width: 420px;
+    width: 260px;
     height: 100vh;
     pointer-events: none;
     z-index: -1;
-    opacity: 0.85;
+    opacity: .85;
     filter: blur(8px) contrast(1.5) saturate(2);
     background-size: 100% 200% !important;
+    background-image:
+        radial-gradient(ellipse at 50% 100%, rgba(255,60,0,.95) 0%, transparent 35%),
+        radial-gradient(ellipse at 35% 75%, rgba(255,120,0,.85) 0%, transparent 30%),
+        radial-gradient(ellipse at 65% 55%, rgba(255,30,0,.75) 0%, transparent 25%),
+        radial-gradient(ellipse at 45% 30%, rgba(255,100,0,.55) 0%, transparent 20%) !important;
     animation: realFlame 4s infinite ease-in-out alternate !important;
 }
 
 body::before {
-    left: -120px;
-    background-image:
-        radial-gradient(ellipse at 20% 95%, rgba(255,0,0,1) 0%, transparent 24%),
-        radial-gradient(ellipse at 45% 75%, rgba(255,100,0,.95) 0%, transparent 22%),
-        radial-gradient(ellipse at 25% 55%, rgba(255,0,0,.9) 0%, transparent 24%),
-        radial-gradient(ellipse at 50% 35%, rgba(255,80,0,.75) 0%, transparent 22%);
+    left: -45px;
 }
 
 body::after {
-    right: -120px;
-    background-image:
-        radial-gradient(ellipse at 80% 95%, rgba(255,0,0,1) 0%, transparent 24%),
-        radial-gradient(ellipse at 55% 75%, rgba(255,100,0,.95) 0%, transparent 22%),
-        radial-gradient(ellipse at 75% 55%, rgba(255,0,0,.9) 0%, transparent 24%),
-        radial-gradient(ellipse at 50% 35%, rgba(255,80,0,.75) 0%, transparent 22%);
+    right: -45px;
 }
 
-/* ---------- NAV ---------- */
+@keyframes realFlame {
+    0% {
+        transform: scaleY(1) scaleX(1) translateX(0);
+        background-position: 0% 100%, 0% 100%, 0% 100%, 0% 100%;
+        opacity: 0.75;
+    }
+
+    33% {
+        transform: scaleY(1.06) scaleX(0.94) translateX(-4px);
+        background-position: 0% 85%, 4% 75%, -3% 80%, 0% 90%;
+    }
+
+    66% {
+        transform: scaleY(0.94) scaleX(1.06) translateX(4px);
+        background-position: 0% 92%, -4% 60%, 3% 65%, -2% 70%;
+        opacity: 0.95;
+    }
+
+    100% {
+        transform: scaleY(1.12) scaleX(0.98) translateX(0);
+        background-position: 0% 75%, 0% 45%, 0% 55%, 0% 65%;
+        opacity: 0.85;
+    }
+}
+
+/* ======================================
+   NAVIGATION
+====================================== */
+
 .navbar {
     position: fixed;
     top: 22px;
@@ -90,31 +117,39 @@ body::after {
     text-shadow: 0 0 14px red;
 }
 
-/* ---------- PAGES ---------- */
+/* ======================================
+   PAGES
+====================================== */
+
 .page {
     display: none;
-    width: 100vw;
-    min-height: 100vh;      /* Fixed: Set to min-height so content can expand */
-    height: auto;           /* Fixed: Keeps container from hard-clipping at the screen base */
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
     padding-top: 105px;
-    padding-bottom: 60px;   /* Added padding to prevent bottom text rubbing against screen edge */
+    padding-bottom: 60px;
     padding-left: 5%;
     padding-right: 5%;
     text-align: center;
 }
 
 .page.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* ======================================
-   HOME SECTION
+   HOME
 ====================================== */
+
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .logo {
@@ -126,9 +161,17 @@ body::after {
 }
 
 @keyframes logoFloat {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .hero h1 {
@@ -182,8 +225,9 @@ body::after {
 }
 
 /* ======================================
-   ABOUT SECTION
+   ABOUT
 ====================================== */
+
 .about-container {
     display: grid;
     grid-template-columns: 430px 1fr;
@@ -193,11 +237,15 @@ body::after {
     margin: 0 auto 40px;
 }
 
+.about-left {
+    text-align: center;
+}
+
 .about-main {
     width: 100%;
     height: auto;
     object-fit: cover;
-    padding: 0px;
+    padding: 0;
     border-radius: 18px;
     max-width: 280px;
     border: 1px solid rgba(255,60,60,.35);
@@ -206,10 +254,10 @@ body::after {
 }
 
 .about-main:hover {
-    transform: translateY(-6px) scale(1.02); 
-    box-shadow: 0 0 35px rgba(255,0,0,.45);     
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 35px rgba(255,0,0,.45);
     cursor: pointer;
-} 
+}
 
 .about-right {
     text-align: left;
@@ -229,11 +277,11 @@ body::after {
     font-weight: 400;
     margin-left: 10px;
     display: inline-block;
-    background: linear-gradient(45deg, #ff3c3c, #ff8a00); 
+    background: linear-gradient(45deg, #ff3c3c, #ff8a00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-    
+
 .about-right p {
     font-size: 18px;
     line-height: 1.8;
@@ -307,8 +355,9 @@ body::after {
 }
 
 /* ======================================
-   SOCIALS SECTION - LINKTREE STYLE
+   SOCIALS
 ====================================== */
+
 #socials h1,
 #contact h1 {
     font-family: 'Cinzel', serif;
@@ -328,27 +377,25 @@ body::after {
 #socials .social-grid {
     display: flex;
     flex-direction: column;
-    align-items: center; /* This centers the buttons */
-    gap: 12px;           /* Tightens the space between buttons */
+    align-items: center;
+    gap: 12px;
     width: 90%;
-    max-width: 280px;    /* This forces the buttons to stay narrow */
-    margin: 0 auto 40px auto; /* '0' pulls them up to the text above */
+    max-width: 280px;
+    margin: 0 auto 40px;
 }
-   
+
 #socials .social-card {
     width: 100%;
     min-height: 70px;
-    background: rgba(15, 15, 15, 0.85);
-    border: 2px solid rgba(255, 60, 60, 0.4);
-    border-radius: 50px; /* Pill shape */
+    background: rgba(15,15,15,.85);
+    border: 2px solid rgba(255,60,60,.4);
+    border-radius: 50px;
     padding: 10px 25px;
     text-decoration: none;
     color: white;
     transition: all 0.3s ease;
-    
-    /* Layout: Side-by-side */
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
@@ -356,11 +403,10 @@ body::after {
 
 #socials .social-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 60, 60, 0.8);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    border-color: rgba(255,60,60,.8);
+    box-shadow: 0 0 20px rgba(255,0,0,.3);
 }
 
-/* Specific styling for the logos */
 #socials .social-card .social-logo {
     width: 30px;
     height: 30px;
@@ -375,13 +421,14 @@ body::after {
     margin: 0;
 }
 
-/* If you have the @username text in your HTML, this will hide it to keep it clean */
 #socials .social-card p {
     display: none;
 }
+
 /* ======================================
-   CONTACT SECTION
+   CONTACT
 ====================================== */
+
 .contact-text {
     font-size: 14px;
     line-height: 1.4;
@@ -390,13 +437,13 @@ body::after {
 }
 
 .contact-card {
-    background: rgba(15, 15, 15, 0.85);
-    border: 2px solid rgba(255, 60, 60, 0.4);
-    border-radius: 20px; /* Keep the corners soft */
+    background: rgba(15,15,15,.85);
+    border: 2px solid rgba(255,60,60,.4);
+    border-radius: 20px;
     padding: 20px;
     margin: 20px auto;
     width: fit-content;
-    min-width: 250px; /* Ensures it has enough space for the email */
+    min-width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -421,7 +468,7 @@ body::after {
     color: #ff3c3c;
     border: 1px solid #ff3c3c;
     padding: 8px 20px;
-    border-radius: 50px; /* Makes it pill-shaped like your other socials */
+    border-radius: 50px;
     cursor: pointer;
     font-size: 12px;
     text-transform: uppercase;
@@ -457,113 +504,401 @@ body::after {
 }
 
 /* ======================================
-   PAGE SWITCHING DISPLAY OVERRIDES
+   DESKTOP
 ====================================== */
-.page {
-    display: none;
-}
 
-.page.active {
-    display: flex;
-}
+@media (min-width: 901px) {
 
-#home.page.active,
-#about.page.active,
-#socials.page.active,
-#contact.page.active {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    #home {
+        padding-top: 85px;
+    }
+
+    .logo {
+        width: 360px;
+        margin-bottom: 0;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        margin-top: -18px;
+    }
+
+    .divider {
+        margin: 2px 0 8px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.25;
+        margin-bottom: 12px;
+    }
+
+    .home-gallery {
+        width: 84%;
+        gap: 18px;
+    }
+
+    .home-gallery img {
+        height: 185px;
+    }
+
+    .home-gallery img:nth-child(4) {
+        object-position: center 30%;
+    }
 }
 
 /* ======================================
-   RESPONSIVE DESIGN & FLICKER EFFECTS
+   TABLET
 ====================================== */
-@media(max-height:850px){
-    .logo { width: 340px; }
-    .hero h1 { font-size: 42px; margin-top: -12px; }
-    .hero p { font-size: 16px; margin-bottom: 18px; }
-    .home-gallery img { height: 190px; }
-    .about-main { height: 410px; }
-    .social-card { min-height: 300px; padding: 25px 16px; }
-}
 
-@media(max-width:900px){
-    html, body { overflow: auto; }
+@media (max-width: 900px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
     .navbar {
         width: 94%;
-        height: auto;
-        padding: 16px;
-        flex-wrap: wrap;
-        gap: 18px;
+        height: 60px;
+        padding: 10px 15px;
+        gap: 20px;
     }
+
+    .navbar a {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
     .page {
         min-height: 100vh;
         height: auto;
-        padding-top: 135px;
-        padding-bottom: 45px;
-        overflow: visible;
+        padding-top: 100px;
+        padding-bottom: 50px;
+        padding-left: 3%;
+        padding-right: 3%;
     }
-    .logo { width: 380px; }
-    .hero h1, #socials h1, #contact h1 { font-size: 38px; letter-spacing: 8px; }
-    .home-gallery, .about-container, .facts, .about-gallery, .social-grid { grid-template-columns: 1fr; }
-    .home-gallery img { height: 430px; }
-    .about-container { width: 92%; gap: 30px; }
-    .about-main { height: 520px; }
-    .about-right { text-align: center; }
-    .about-right h2 { font-size: 36px; }
-    .about-right h2 span { font-size: 52px; }
-    .about-gallery img { height: 420px; }
-    .social-card { min-height: 260px; }
-    .thank-you { width: 90%; }
+
+    /* HOME */
+
+    .logo {
+        width: 320px;
+        max-width: 85%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        letter-spacing: 7px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .home-gallery {
+        width: 92%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .home-gallery img {
+        height: 260px;
+    }
+
+    /* ABOUT */
+
+    .about-container {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-left {
+        text-align: center;
+    }
+
+    .about-main {
+        width: 280px;
+        max-width: 90%;
+        height: auto;
+    }
+
+    .about-right {
+        text-align: center;
+    }
+
+    .about-right h2 {
+        font-size: 28px;
+        white-space: normal;
+    }
+
+    .about-right h2 span {
+        font-size: 48px;
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .about-right p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .facts {
+        width: 92%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .fact-card {
+        padding: 18px 12px;
+    }
+
+    .fact-card h4 {
+        font-size: 16px;
+    }
+
+    .fact-card p {
+        font-size: 14px;
+    }
+
+    .about-gallery {
+        width: 92%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .about-gallery img {
+        height: 260px;
+    }
+
+    /* SOCIALS */
+
+    #socials h1,
+    #contact h1 {
+        font-size: 40px;
+        letter-spacing: 7px;
+    }
+
+    .social-intro {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    #socials .social-grid {
+        width: 90%;
+        max-width: 360px;
+        gap: 12px;
+    }
+
+    #socials .social-card {
+        min-height: 60px;
+        padding: 10px 20px;
+    }
+
+    #socials .social-card h3 {
+        font-size: 15px;
+    }
+
+    /* CONTACT */
+
+    .contact-text {
+        font-size: 14px;
+    }
+
+    .contact-card {
+        width: 90%;
+        max-width: 350px;
+        min-width: 0;
+    }
+
+    .thank-you {
+        width: 90%;
+    }
 }
 
-@media (min-width: 901px){
-    #home { padding-top: 85px; }
-    .logo { width: 360px; margin-bottom: 0; }
-    .hero h1 { font-size: 42px; margin-top: -18px; }
-    .divider { margin: 2px 0 8px; }
-    .hero p { font-size: 15px; line-height: 1.25; margin-bottom: 12px; }
-    .home-gallery { width: 84%; gap: 18px; }
-    .home-gallery img { height: 185px; }
-    .home-gallery img:nth-child(4) { object-position: center 30%; }
-}
+/* ======================================
+   PHONE
+====================================== */
 
-/* Customized Glow Overrides & Interactive Animated Flames */
-body::before,
-body::after {
-    width: 260px !important;
-    opacity: .85 !important;
-    filter: blur(8px) contrast(1.5) saturate(2) !important;
-    background-image:
-        radial-gradient(ellipse at 50% 100%, rgba(255,60,0,.95) 0%, transparent 35%),
-        radial-gradient(ellipse at 35% 75%, rgba(255,120,0,.85) 0%, transparent 30%),
-        radial-gradient(ellipse at 65% 55%, rgba(255,30,0,.75) 0%, transparent 25%),
-        radial-gradient(ellipse at 45% 30%, rgba(255,100,0,.55) 0%, transparent 20%) !important;
-    animation: realFlame 4s infinite ease-in-out alternate !important;
-}
+@media (max-width: 600px) {
 
-body::before { left: -45px !important; }
-body::after { right: -45px !important; }
+    .navbar {
+        width: 94%;
+        height: 54px;
+        padding: 8px 10px;
+        gap: 10px;
+        border-radius: 12px;
+    }
 
-@keyframes realFlame {
-    0% {
-        transform: scaleY(1) scaleX(1) translateX(0);
-        background-position: 0% 100%, 0% 100%, 0% 100%, 0% 100%;
-        opacity: 0.75;
+    .navbar a {
+        font-size: 9px;
+        letter-spacing: 1px;
+        white-space: nowrap;
     }
-    33% {
-        transform: scaleY(1.06) scaleX(0.94) translateX(-4px);
-        background-position: 0% 85%, 4% 75%, -3% 80%, 0% 90%;
+
+    .page {
+        padding-top: 82px;
+        padding-bottom: 40px;
     }
-    66% {
-        transform: scaleY(0.94) scaleX(1.06) translateX(4px);
-        background-position: 0% 92%, -4% 60%, 3% 65%, -2% 70%;
-        opacity: 0.95;
+
+    /* HOME */
+
+    .logo {
+        width: 260px;
+        max-width: 85%;
     }
-    100% {
-        transform: scaleY(1.12) scaleX(0.98) translateX(0);
-        background-position: 0% 75%, 0% 45%, 0% 55%, 0% 65%;
-        opacity: 0.85;
+
+    .hero h1 {
+        font-size: 30px;
+        letter-spacing: 5px;
+    }
+
+    .hero p {
+        font-size: 14px;
+        padding: 0 15px;
+        line-height: 1.5;
+    }
+
+    .home-gallery {
+        width: 94%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .home-gallery img {
+        height: 190px;
+        border-radius: 10px;
+    }
+
+    /* ABOUT */
+
+    .about-container {
+        width: 94%;
+        gap: 25px;
+    }
+
+    .about-main {
+        width: 240px;
+    }
+
+    .about-right {
+        text-align: center;
+    }
+
+    .about-right h2 {
+        font-size: 23px;
+        line-height: 1.3;
+    }
+
+    .about-right h2 span {
+        font-size: 42px;
+    }
+
+    .about-right p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .section-title {
+        font-size: 22px;
+        letter-spacing: 4px;
+        margin: 28px 0 20px;
+    }
+
+    .facts {
+        width: 94%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .fact-card {
+        padding: 16px 8px;
+        border-radius: 12px;
+    }
+
+    .fact-card h4 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .fact-card p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .about-gallery {
+        width: 94%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .about-gallery img {
+        height: 190px;
+        border-radius: 10px;
+    }
+
+    /* SOCIALS */
+
+    #socials h1,
+    #contact h1 {
+        font-size: 30px;
+        letter-spacing: 5px;
+    }
+
+    .social-intro {
+        font-size: 13px;
+        padding: 0 15px;
+        margin-bottom: 25px;
+    }
+
+    #socials .social-grid {
+        width: 92%;
+        max-width: 340px;
+        gap: 10px;
+    }
+
+    #socials .social-card {
+        min-height: 56px;
+        padding: 8px 18px;
+    }
+
+    #socials .social-card .social-logo {
+        width: 26px;
+        height: 26px;
+    }
+
+    #socials .social-card h3 {
+        font-size: 13px;
+        letter-spacing: 1.5px;
+    }
+
+    /* CONTACT */
+
+    .contact-text {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    .contact-card {
+        width: 92%;
+        max-width: 350px;
+        min-width: 0;
+        padding: 18px 12px;
+    }
+
+    .contact-card h3 {
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+    .mail-icon {
+        font-size: 45px;
+    }
+
+    .thank-you {
+        width: 90%;
     }
 }
