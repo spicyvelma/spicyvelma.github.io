@@ -206,8 +206,8 @@ body::after {
 }
 
 .about-main:hover {
-    transform: translateY(-6px) scale(1.02); 
-    box-shadow: 0 0 35px rgba(255,0,0,.45);     
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 35px rgba(255,0,0,.45);    
     cursor: pointer;
 } 
 
@@ -229,11 +229,11 @@ body::after {
     font-weight: 400;
     margin-left: 10px;
     display: inline-block;
-    background: linear-gradient(45deg, #ff3c3c, #ff8a00); 
+    background: linear-gradient(45deg, #ff3c3c, #ff8a00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-    
+   
 .about-right p {
     font-size: 18px;
     line-height: 1.8;
@@ -334,7 +334,7 @@ body::after {
     max-width: 280px;    /* This forces the buttons to stay narrow */
     margin: 0 auto 40px auto; /* '0' pulls them up to the text above */
 }
-   
+  
 #socials .social-card {
     width: 100%;
     min-height: 70px;
@@ -345,10 +345,10 @@ body::after {
     text-decoration: none;
     color: white;
     transition: all 0.3s ease;
-    
+   
     /* Layout: Side-by-side */
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
