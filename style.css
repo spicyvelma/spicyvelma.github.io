@@ -456,26 +456,6 @@ body::after {
 }
 
 /* ======================================
-   PAGE SWITCHING DISPLAY OVERRIDES
-====================================== */
-.page {
-    display: none;
-}
-
-.page.active {
-    display: flex;
-}
-
-#home.page.active,
-#about.page.active,
-#socials.page.active,
-#contact.page.active {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-/* ======================================
    RESPONSIVE DESIGN & FLICKER EFFECTS
 ====================================== */
 @media(max-height:850px){
