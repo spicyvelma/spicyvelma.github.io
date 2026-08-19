@@ -293,8 +293,8 @@ body::after {
 }
 
 .about-gallery img {
-    width: 185px;
-    height: 185px;
+    width: 195px;
+    height: 195px;
     object-fit: cover;
     object-position: center top;
     border-radius: 14px;
