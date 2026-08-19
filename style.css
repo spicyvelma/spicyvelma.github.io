@@ -292,8 +292,7 @@ body::after {
 
 .about-gallery img {
     width: 100%;
-   aspect-ratio: 1 / 1;
-    height: auto;
+    height: 240px;
     object-fit: cover;
     object-position: center top;
     border-radius: 14px;
