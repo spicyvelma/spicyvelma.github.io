@@ -153,9 +153,10 @@ body::after {
 }
 
 .home-gallery {
-    display: flex;
-    gap: 20px;
-    width: 900px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -205,8 +206,8 @@ body::after {
 }
 
 .about-main:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 0 35px rgba(255,0,0,.45);    
+    transform: translateY(-6px) scale(1.02); 
+    box-shadow: 0 0 35px rgba(255,0,0,.45);     
     cursor: pointer;
 } 
 
@@ -228,11 +229,11 @@ body::after {
     font-weight: 400;
     margin-left: 10px;
     display: inline-block;
-    background: linear-gradient(45deg, #ff3c3c, #ff8a00);
+    background: linear-gradient(45deg, #ff3c3c, #ff8a00); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-   
+    
 .about-right p {
     font-size: 18px;
     line-height: 1.8;
@@ -284,16 +285,16 @@ body::after {
 .about-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    width: 900px;
+    gap: 20px;
+    width: 90%;
     margin: 0 auto;
 }
 
 .about-gallery img {
     width: 100%;
-   height: 240px;
-   object-fit: cover;
-    object-position: center;
+    height: 240px;
+    object-fit: cover;
+    object-position: center top;
     border-radius: 14px;
     border: 1px solid rgba(255,60,60,.25);
     box-shadow: 0 0 20px rgba(255,0,0,.15);
@@ -333,7 +334,7 @@ body::after {
     max-width: 280px;    /* This forces the buttons to stay narrow */
     margin: 0 auto 40px auto; /* '0' pulls them up to the text above */
 }
-  
+   
 #socials .social-card {
     width: 100%;
     min-height: 70px;
@@ -344,10 +345,10 @@ body::after {
     text-decoration: none;
     color: white;
     transition: all 0.3s ease;
-   
+    
     /* Layout: Side-by-side */
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
@@ -391,15 +392,15 @@ body::after {
 .contact-card {
     background: rgba(15, 15, 15, 0.85);
     border: 2px solid rgba(255, 60, 60, 0.4);
-    border-radius: 20px; /* Keep the corners soft */
-    padding: 20px;
+    border-radius: 20px;
+    padding: 15px;         /* Further reduced padding to minimize space */
     margin: 20px auto;
-    width: fit-content;
-    min-width: 250px; /* Ensures it has enough space for the email */
+    width: fit-content;    /* This shrinks the box to fit the content exactly */
+    max-width: 300px;      /* Restricts the box width so it forces a wrap */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .mail-icon {
@@ -410,26 +411,27 @@ body::after {
 }
 
 .contact-card h3 {
-    font-size: 16px;
+    font-size: 16px;       /* Smaller font size helps it fit or wrap better */
     margin: 0;
+    word-break: break-all; /* Forces a break at any character if needed */
     text-align: center;
 }
 
 .contact-card button {
     background: transparent;
-    color: #ff3c3c;
-    border: 1px solid #ff3c3c;
-    padding: 8px 20px;
-    border-radius: 50px; /* Makes it pill-shaped like your other socials */
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    padding: 13px 30px;
+    border-radius: 10px;
+    letter-spacing: 2px;
     cursor: pointer;
-    font-size: 12px;
-    text-transform: uppercase;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .contact-card button:hover {
-    background: #ff3c3c;
+    background: #ff2525;
     color: white;
+    box-shadow: 0 0 25px red;
 }
 
 #copyMessage {
@@ -456,13 +458,33 @@ body::after {
 }
 
 /* ======================================
+   PAGE SWITCHING DISPLAY OVERRIDES
+====================================== */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: flex;
+}
+
+#home.page.active,
+#about.page.active,
+#socials.page.active,
+#contact.page.active {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* ======================================
    RESPONSIVE DESIGN & FLICKER EFFECTS
 ====================================== */
 @media(max-height:850px){
     .logo { width: 340px; }
     .hero h1 { font-size: 42px; margin-top: -12px; }
     .hero p { font-size: 16px; margin-bottom: 18px; }
-    .home-gallery img { height: 240px; }
+    .home-gallery img { height: 190px; }
     .about-main { height: 410px; }
     .social-card { min-height: 300px; padding: 25px 16px; }
 }
@@ -491,7 +513,8 @@ body::after {
     .about-main { height: 520px; }
     .about-right { text-align: center; }
     .about-right h2 { font-size: 36px; }
-    .about-right h2 span { font-size: 52px;
+    .about-right h2 span { font-size: 52px; }
+    .about-gallery img { height: 420px; }
     .social-card { min-height: 260px; }
     .thank-you { width: 90%; }
 }
@@ -503,7 +526,7 @@ body::after {
     .divider { margin: 2px 0 8px; }
     .hero p { font-size: 15px; line-height: 1.25; margin-bottom: 12px; }
     .home-gallery { width: 84%; gap: 18px; }
-    .home-gallery img { height: 240px; }
+    .home-gallery img { height: 185px; }
     .home-gallery img:nth-child(4) { object-position: center 30%; }
 }
 
