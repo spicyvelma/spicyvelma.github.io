@@ -190,7 +190,7 @@ body::after {
     grid-template-columns: 430px 1fr;
     gap: 20px;
     align-items: center;
-    width: 88%;
+    width: 75%;
     margin: 0 auto 40px;
 }
 
