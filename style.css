@@ -284,16 +284,16 @@ body::after {
 
 .about-gallery {
     display: grid;
-    grid-template-columns: repeat(6, 140px);
+    grid-template-columns: repeat(6, 150px);
    justify-content: center;
-    gap: 30px;
+    gap: 40px;
     width: 90%;
     margin: 0 auto;
 }
 
 .about-gallery img {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     object-position: center top;
     border-radius: 14px;
