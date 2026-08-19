@@ -284,7 +284,8 @@ body::after {
 
 .about-gallery {
     display: flex;
-   justify-content: space-between;
+   justify-content: center;
+   gap: 45px;
     width: 90%;
     margin: 0 auto;
 }
