@@ -291,7 +291,7 @@ body::after {
 }
 
 .about-gallery img {
-    width: 100%;
+    width: 240px;
     height: 240px;
     object-fit: cover;
     object-position: center top;
