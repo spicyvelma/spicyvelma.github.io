@@ -284,7 +284,7 @@ body::after {
 
 .about-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 240px);
+    grid-template-columns: repeat(6, 170px);
    justify-content: center;
     gap: 20px;
     width: 90%;
