@@ -252,7 +252,7 @@ body::after {
 
 .facts {
     display: grid;
-    grid-template-columns: repeat(3, 240px);
+    grid-template-columns: repeat(3, 220px);
    justify-content: center;
     gap: 20px;
     width: 70%;
