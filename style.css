@@ -251,7 +251,7 @@ body::after {
 
 .facts {
     display: grid;
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(3, 240px);
    justify-content: center;
     gap: 20px;
     width: 70%;
