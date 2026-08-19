@@ -286,7 +286,6 @@ body::after {
     display: grid;
     grid-template-columns: repeat(6, 150px);
    justify-content: center;
-    gap: 40px;
     width: 90%;
     margin: 0 auto;
 }
