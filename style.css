@@ -283,8 +283,7 @@ body::after {
 }
 
 .about-gallery {
-    display: grid;
-    grid-template-columns: repeat(6, 150px);
+    display: flex;
    justify-content: space-between;
     width: 90%;
     margin: 0 auto;
