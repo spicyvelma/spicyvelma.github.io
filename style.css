@@ -187,10 +187,10 @@ body::after {
 ====================================== */
 .about-container {
     display: grid;
-    grid-template-columns: 430px 1fr;
+    grid-template-columns: 350px 1fr;
     gap: 20px;
     align-items: center;
-    width: 75%;
+    width: 88%;
     margin: 0 auto 40px;
 }
 
