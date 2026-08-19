@@ -551,7 +551,7 @@ body::after {
     }
 
     .home-gallery img {
-        height: 280px;
+        height: 350px;
     }
 
     .home-gallery img:nth-child(4) {
