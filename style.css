@@ -533,9 +533,7 @@ body::after {
     .about-right h2 { font-size: 36px;
    white-space: normal;
    }
-    .about-right h2 span { font-size: 52px;
-   white-space: normal;
-   }                      
+    .about-right h2 span { font-size: 52px; }                
    .about-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
