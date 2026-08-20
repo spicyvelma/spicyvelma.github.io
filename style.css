@@ -513,7 +513,7 @@ body::after {
     .hero h1, #socials h1, #contact h1 { font-size: 38px; letter-spacing: 8px; }
     .about-container, .facts, .about-gallery, .social-grid { grid-template-columns: 1fr; }
    .home-gallery {
-    grid-template-columns: repeat(2, 1fr;
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
    width: 420px;
     max-width: 95%;
