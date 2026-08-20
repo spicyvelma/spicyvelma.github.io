@@ -537,11 +537,18 @@ body::after {
        width: 280px;
        height: 320px;
        object-fit: cover;
-    .about-right { text-align: center; }
-    .about-right h2 { font-size: 36px;
+       object-position: center;
+   }    
+    .about-right { 
+       text-align: center; 
+   }
+    .about-right h2 { 
+       font-size: 36px;
    white-space: normal;
    }
-    .about-right h2 span { font-size: 52px; }                
+    .about-right h2 span { 
+       font-size: 52px; 
+   }                
    .about-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
