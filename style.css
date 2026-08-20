@@ -534,8 +534,8 @@ body::after {
     grid-template-columns: repeat(3, 1fr);
 } 
    .about-gallery img {
-    width: 110px;
-    height: 110px;
+    width: 125px;
+    height: 125px;
     object-fit: cover;
 }
     .social-card { min-height: 260px; }
