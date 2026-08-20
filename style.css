@@ -513,11 +513,13 @@ body::after {
     .hero h1, #socials h1, #contact h1 { font-size: 38px; letter-spacing: 8px; }
     .home-gallery, .about-container, .facts, .about-gallery, .social-grid { grid-template-columns: 1fr; }
    .home-gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr;
     justify-items: center;
+   width: 420px;
+    max-width: 95%;
+    margin: 0 auto;
 }
    .home-gallery img {
-   grid-template-columns: repeat(2, 1fr);
    width: 200px;
     height: 200px;
     object-fit: cover;
