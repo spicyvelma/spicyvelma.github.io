@@ -511,7 +511,7 @@ body::after {
     }
     .logo { width: 380px; }
     .hero h1, #socials h1, #contact h1 { font-size: 38px; letter-spacing: 8px; }
-    .home-gallery, .about-container, .facts, .about-gallery, .social-grid { grid-template-columns: 1fr; }
+    .about-container, .facts, .about-gallery, .social-grid { grid-template-columns: 1fr; }
    .home-gallery {
     grid-template-columns: repeat(2, 1fr;
     justify-items: center;
