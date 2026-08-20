@@ -552,10 +552,11 @@ body::after {
    .about-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+      gap: 8pxon mo
 } 
    .about-gallery img {
-    width: 125px;
-    height: 125px;
+    width: 105px;
+    height: 105px;
     object-fit: cover;
 }
     .social-card { min-height: 260px; }
