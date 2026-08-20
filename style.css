@@ -512,13 +512,20 @@ body::after {
     .logo { width: 380px; }
     .hero h1, #socials h1, #contact h1 { font-size: 38px; letter-spacing: 8px; }
     .home-gallery, .about-container, .facts, .about-gallery, .social-grid { grid-template-columns: 1fr; }
-    .home-gallery img { height: 430px; }
+    .home-gallery img {
+    height: 200px;
+    object-fit: cover;
+}
     .about-container { width: 92%; gap: 30px; }
     .about-main { height: 520px; }
     .about-right { text-align: center; }
     .about-right h2 { font-size: 36px; }
     .about-right h2 span { font-size: 52px; }
-    .about-gallery img { height: 420px; }
+    .about-gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
     .social-card { min-height: 260px; }
     .thank-you { width: 90%; }
 }
