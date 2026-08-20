@@ -520,8 +520,8 @@ body::after {
     margin: 0 auto;
 }
    .home-gallery img {
-   width: 150px;
-    height: 150px;
+   width: 130px;
+    height: 130px;
     object-fit: cover;
 }
     .about-container { width: 92%; gap: 30px; }
