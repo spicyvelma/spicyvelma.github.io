@@ -289,7 +289,6 @@ body::after {
 
 .about-gallery {
     display: flex;
-   grid-template-columns: repeat(3, 180px);
    justify-content: center;
    gap: 30px;
     width: 90%;
@@ -297,8 +296,8 @@ body::after {
 }
 
 .about-gallery img {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     object-position: center top;
     border-radius: 14px;
