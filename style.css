@@ -522,7 +522,11 @@ body::after {
     .about-right { text-align: center; }
     .about-right h2 { font-size: 36px; }
     .about-right h2 span { font-size: 52px; }
-    .about-gallery img {
+   .about-gallery {
+    flex-direction: column;
+    align-items: center;
+} 
+   .about-gallery img {
     width: 200px;
     height: 200px;
     object-fit: cover;
