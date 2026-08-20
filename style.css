@@ -494,7 +494,10 @@ body::after {
 }
 
 @media(max-width:900px){
-    html, body { overflow: auto; }
+    html, body {
+        overflow-x: hidden;
+        overflow-y: auto;
+     }   
     .navbar {
         width: 94%;
         height: auto;
