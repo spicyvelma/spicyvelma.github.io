@@ -530,8 +530,12 @@ body::after {
     .about-container { width: 92%; gap: 30px; }
     .about-main { height: 520px; }
     .about-right { text-align: center; }
-    .about-right h2 { font-size: 36px; }
-    .about-right h2 span { font-size: 52px; }
+    .about-right h2 { font-size: 36px;
+   white-space: normal;
+   }
+    .about-right h2 span { font-size: 52px;
+   white-space: normal;
+   }                      
    .about-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
