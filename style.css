@@ -532,7 +532,7 @@ body::after {
     gap: 30px;
     justify-items: center;
 }
-    .about-main { height: 520px; }
+    .about-main { height: 400px; }
     .about-right { text-align: center; }
     .about-right h2 { font-size: 36px;
    white-space: normal;
