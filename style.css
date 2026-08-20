@@ -536,8 +536,7 @@ body::after {
     .about-main {
        width: 280px;
        height: 320px;
-       object-fit: cover;
-       object-position: center;
+       object-fit: contain;
    }    
     .about-right { 
        text-align: center; 
